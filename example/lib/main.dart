@@ -25,7 +25,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final PopupController _popupController = PopupController();
+  // final PopupController _popupController = PopupController();
 
   List<Marker> markers;
   int pointIndex;
@@ -118,8 +118,8 @@ class _HomePageState extends State<HomePage> {
           plugins: [
             MarkerClusterPlugin(),
           ],
-          onTap: (_) => _popupController
-              .hidePopup(), // Hide popup when the map is tapped.
+          // onTap: (_) => _popupController
+          //     .hidePopup(), // Hide popup when the map is tapped.
         ),
         layers: [
           TileLayerOptions(
@@ -139,20 +139,20 @@ class _HomePageState extends State<HomePage> {
                 borderColor: Colors.blueAccent,
                 color: Colors.black12,
                 borderStrokeWidth: 3),
-            popupOptions: PopupOptions(
-                popupSnap: PopupSnap.markerTop,
-                popupController: _popupController,
-                popupBuilder: (_, marker) => Container(
-                      width: 200,
-                      height: 100,
-                      color: Colors.white,
-                      child: GestureDetector(
-                        onTap: () => debugPrint("Popup tap!"),
-                        child: Text(
-                          "Container popup for marker at ${marker.point}",
-                        ),
-                      ),
-                    )),
+            // popupOptions: PopupOptions(
+            //     popupSnap: PopupSnap.markerTop,
+            //     popupController: _popupController,
+            //     popupBuilder: (_, marker) => Container(
+            //           width: 200,
+            //           height: 100,
+            //           color: Colors.white,
+            //           child: GestureDetector(
+            //             onTap: () => debugPrint("Popup tap!"),
+            //             child: Text(
+            //               "Container popup for marker at ${marker.point}",
+            //             ),
+            //           ),
+            //         )),
             builder: (context, markers) {
               return FloatingActionButton(
                 child: Text(markers.length.toString()),

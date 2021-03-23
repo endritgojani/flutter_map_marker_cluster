@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter_map_marker_cluster/src/node/marker_cluster_node.dart';
-import 'package:flutter_map_marker_popup/extension_api.dart';
+// import 'package:flutter_map_marker_popup/extension_api.dart';
 
 class PolygonOptions {
   final Color color;
@@ -38,17 +38,17 @@ class AnimationsOptions {
   });
 }
 
-class PopupOptions {
-  final PopupBuilder popupBuilder;
-  final PopupController popupController;
-  final PopupSnap popupSnap;
-
-  const PopupOptions({
-    this.popupBuilder,
-    this.popupSnap = PopupSnap.markerTop,
-    this.popupController,
-  });
-}
+// class PopupOptions {
+//   final PopupBuilder popupBuilder;
+//   final PopupController popupController;
+//   final PopupSnap popupSnap;
+//
+//   const PopupOptions({
+//     this.popupBuilder,
+//     this.popupSnap = PopupSnap.markerTop,
+//     this.popupController,
+//   });
+// }
 
 typedef ClusterWidgetBuilder = Widget Function(
     BuildContext context, List<Marker> markers);
@@ -116,7 +116,7 @@ class MarkerClusterLayerOptions extends LayerOptions {
   final void Function(MarkerClusterNode) onClusterTap;
 
   /// Popup's options that show when tapping markers or via the PopupController.
-  final PopupOptions popupOptions;
+  // final PopupOptions popupOptions;
 
   MarkerClusterLayerOptions({
     @required this.builder,
@@ -140,6 +140,6 @@ class MarkerClusterLayerOptions extends LayerOptions {
     this.onMarkerTap,
     this.onClusterTap,
     this.onMarkersClustered,
-    this.popupOptions,
+    // this.popupOptions,
   }) : assert(builder != null);
 }
